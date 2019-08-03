@@ -5,32 +5,36 @@ using UnityEngine.UI;
 
 public class RadialMenuUIBehaviour : MonoBehaviour {
 
-    int currentSense;
+    SenseBehaviour.Sense currentSense;
     float cooldown;
 
     [SerializeField] Button sightButton, hearingButton, touchButton;
     [SerializeField] GameObject radialMenuUI;
     [SerializeField] Text cooldownText;
+    [SerializeField] GameObject player;
+
+    SenseBehaviour senseBeh;
 
     void Start () {
-        currentSense = 0;
-        // currentSense = sense.GetComponent<SenseBehaviour>.getCurrentSense();
+        senseBeh = player.GetComponent<SenseBehaviour>();
+        currentSense = senseBeh.getCurrentSense();
         //Change UI sprite button?
-        cooldown = 10.0f;
+        cooldown = senseBeh.getCurrentCooldown();
         // cooldown = sense.GetComponent<SenseBehaviour>.getCooldown();
-        sightButton.onClick.AddListener(() => onClickButton(0));
-        hearingButton.onClick.AddListener(() => onClickButton(1));
-        touchButton.onClick.AddListener(() => onClickButton(2));
+        sightButton.onClick.AddListener(() => onClickButton(SenseBehaviour.Sense.Sight));
+        hearingButton.onClick.AddListener(() => onClickButton(SenseBehaviour.Sense.Hearing));
+        touchButton.onClick.AddListener(() => onClickButton(SenseBehaviour.Sense.Touch));
         Debug.Log(currentSense);
         radialMenuUI.SetActive(false);
     }
 
-    void onClickButton(int button) {
+    void onClickButton(SenseBehaviour.Sense sense) {
         if (cooldown <= 0) {
-            currentSense = button;
+            currentSense = sense;
             //Change UI sprite button?
-            //sense.GetComponent<SenseBehaviour>.setCurrentSense(currentSense);
+            senseBeh.setCurrentSense(currentSense);
             //reiniciar cooldown a sense + fer transicio del sentit antic al nou
+            cooldown = senseBeh.getCurrentCooldown();
             Debug.Log(currentSense);
         }
         radialMenuUI.SetActive(false);
@@ -38,16 +42,13 @@ public class RadialMenuUIBehaviour : MonoBehaviour {
 
     void Update () {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            cooldown = 10.0f;
-            // cooldown = sense.GetComponent<SenseBehaviour>.getCooldown();
             radialMenuUI.SetActive(true);
         }
-        if (cooldown-Time.deltaTime > 0) {
-            cooldown -= Time.deltaTime;
+        cooldown = senseBeh.getCurrentCooldown();
+        if (cooldown != 0) {
             cooldownText.text = cooldown.ToString("N2");
         }
         else {
-            cooldown = 0;
             cooldownText.text = cooldown.ToString("N2");
             //Mostrar logo disponible
         } 
