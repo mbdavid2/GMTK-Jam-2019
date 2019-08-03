@@ -12,7 +12,7 @@ public class SenseBehaviour : MonoBehaviour {
 
     AudioSource hearingBackground1, hearingBackground2;
 
-    Transform[] level_elem;
+    Transform[] level_elem, actors_elems;
 
     void Start () {
         hearingBackground1 = GameObject.Find("Audio Background 1").GetComponent<AudioSource>();
@@ -20,6 +20,7 @@ public class SenseBehaviour : MonoBehaviour {
         hearingBackground1.Play();
         hearingBackground2.Play();
         level_elem = GameObject.Find("Level").GetComponentsInChildren<Transform>();
+        actors_elems = GameObject.Find("Actors").GetComponentsInChildren<Transform>();
         setCurrentSense(Sense.Sight);
         currentCooldown = 0;
     }
@@ -34,6 +35,14 @@ public class SenseBehaviour : MonoBehaviour {
                         c.gameObject.GetComponent<MeshRenderer>().enabled = true;
                     }
                 }
+                foreach (Transform c in actors_elems) {
+                    if (c.gameObject.GetComponent<MeshRenderer>() != null) {
+                        c.gameObject.GetComponent<MeshRenderer>().enabled = true;
+                    }
+                    if (c.gameObject.GetComponent<Canvas>() != null) {
+                        c.gameObject.GetComponent<Canvas>().enabled = false;
+                    }
+                }
                 break;
             case Sense.Hearing:
                 hearingBackground1.UnPause();
@@ -43,6 +52,14 @@ public class SenseBehaviour : MonoBehaviour {
                         c.gameObject.GetComponent<MeshRenderer>().enabled = false;
                     }
                 }
+                foreach (Transform c in actors_elems) {
+                    if (c.gameObject.GetComponent<MeshRenderer>() != null) {
+                        c.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                    }
+                    if (c.gameObject.GetComponent<Canvas>() != null) {
+                        c.gameObject.GetComponent<Canvas>().enabled = true;
+                    }
+                }
                 break;
             case Sense.Touch:
                 hearingBackground1.Pause();
@@ -50,6 +67,14 @@ public class SenseBehaviour : MonoBehaviour {
                 foreach (Transform c in level_elem) {
                     if (c.gameObject.GetComponent<MeshRenderer>() != null) {
                         c.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                    }
+                }
+                foreach (Transform c in actors_elems) {
+                    if (c.gameObject.GetComponent<MeshRenderer>() != null) {
+                        c.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                    }
+                    if (c.gameObject.GetComponent<Canvas>() != null) {
+                        c.gameObject.GetComponent<Canvas>().enabled = false;
                     }
                 }
                 break;
