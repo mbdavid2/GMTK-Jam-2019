@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour {
     public Rigidbody playerRb;
 
 	void Start () {
-        movementSpeed = 7f;
+        movementSpeed = 5f;
         collided = false;
 	}
 
