@@ -29,7 +29,7 @@ public class RadialMenuUIBehaviour : MonoBehaviour {
     }
 
     void onClickButton(SenseBehaviour.Sense sense) {
-        if (cooldown <= 0) {
+        if (cooldown <= 0 && currentSense != sense) {
             currentSense = sense;
             //Change UI sprite button?
             senseBeh.setCurrentSense(currentSense);
