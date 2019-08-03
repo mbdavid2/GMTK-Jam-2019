@@ -20,16 +20,18 @@ public class PlayerMovement : MonoBehaviour {
     void OnCollisionStay(Collision coll) {
         playerRb.velocity = Vector3.zero;
         if (coll.gameObject.tag.Equals("Character")) {
-            print(coll.gameObject.GetComponent<CharacterAttributes>().isCharacterKiller());
-            //GetComponent<SenseBehaviour>().isCharacterKiller()
-            textInteract.text = "Press F to accuse";
-            if(Input.GetKey(KeyCode.F)) {
-                print("dsadas");
-                if (coll.gameObject.GetComponent<CharacterAttributes>().isCharacterKiller()) {
-			        SceneManager.LoadScene("Main");
-                }
-                else {
-                    SceneManager.LoadScene("GameOver");
+            if (GetComponent<SenseBehaviour>().getCurrentSense() == SenseBehaviour.Sense.Touch) {
+                print(coll.gameObject.GetComponent<CharacterAttributes>().isCharacterKiller());
+                //GetComponent<SenseBehaviour>().isCharacterKiller()
+                textInteract.text = "Press F to accuse";
+                if(Input.GetKey(KeyCode.F)) {
+                    print("dsadas");
+                    if (coll.gameObject.GetComponent<CharacterAttributes>().isCharacterKiller()) {
+                        SceneManager.LoadScene("Main");
+                    }
+                    else {
+                        SceneManager.LoadScene("GameOver");
+                    }
                 }
             }
         }
