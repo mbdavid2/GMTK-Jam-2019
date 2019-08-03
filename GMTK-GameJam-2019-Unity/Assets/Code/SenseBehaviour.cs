@@ -58,6 +58,11 @@ public class SenseBehaviour : MonoBehaviour {
                     }
                     if (c.gameObject.GetComponent<Canvas>() != null) {
                         c.gameObject.GetComponent<Canvas>().enabled = true;
+                        //print(c.gameObject.GetComponent<Canvas>().GetComponent<RectTransform>().transform.localScale);
+
+                        // Distance to player
+                        float distance = Vector3.Distance(c.gameObject.GetComponent<Canvas>().GetComponent<RectTransform>().transform.position, GameObject.Find("Player").transform.position);
+                        c.gameObject.GetComponent<Canvas>().GetComponent<RectTransform>().transform.localScale -= new Vector3(-1/distance, -1/distance, 0f);
                         c.gameObject.GetComponent<Canvas>().referencePixelsPerUnit = 21f;
                         /*UnityEngine.UI.CanvasScaler can = c.gameObject.GetComponent<Canvas>().CanvasScaler;
                         can.dynamicPixelsPerUnit = 20f;*/
