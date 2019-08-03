@@ -58,6 +58,9 @@ public class SenseBehaviour : MonoBehaviour {
                     }
                     if (c.gameObject.GetComponent<Canvas>() != null) {
                         c.gameObject.GetComponent<Canvas>().enabled = true;
+                        c.gameObject.GetComponent<Canvas>().referencePixelsPerUnit = 21f;
+                        /*UnityEngine.UI.CanvasScaler can = c.gameObject.GetComponent<Canvas>().CanvasScaler;
+                        can.dynamicPixelsPerUnit = 20f;*/
                     }
                 }
                 break;
