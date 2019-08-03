@@ -9,13 +9,17 @@ public class CharacterAttributes : MonoBehaviour {
     public string message;
     public bool isKiller;
     public GameObject objectMessage;
+    public GameObject canvas;
+    public GameObject playerInteraction;
+    public GameObject nearSpace;
 
 	void Start () {
         
 	}
 
     void Update () {
-		
+		//playerInteraction = this.gameObject.transform.GetChild(2).gameObject;
+        //print(playerInteraction.GetComponent<CollDetector>().isPlayerInRange());
 	}
 
     public void setID(int id) {
@@ -26,6 +30,7 @@ public class CharacterAttributes : MonoBehaviour {
     public void setMessage(string message) {
         this.message = message;
         objectMessage = this.gameObject.transform.GetChild(0).gameObject;
+        canvas = this.gameObject.transform.GetChild(4).gameObject;
         objectMessage.GetComponent<TextMesh>().text = message;
         messagePointAtCamera();
     }
@@ -36,11 +41,15 @@ public class CharacterAttributes : MonoBehaviour {
         //objectMessage.transform.Rotate(objectMessage.transform.rotation.x, objectMessage.transform.rotation.y + 180f, objectMessage.transform.rotation.z, Space.Self);
 
         objectMessage.transform.LookAt(objectMessage.transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
+        canvas.transform.LookAt(canvas.transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
     }
 
     public void setIsKiller() {
         isKiller = true;
     }
 	
+    public bool isCharacterKiller() {
+        return isKiller;
+    }
 	
 }

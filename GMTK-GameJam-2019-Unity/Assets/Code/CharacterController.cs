@@ -29,17 +29,17 @@ public class CharacterController : MonoBehaviour {
 	void instantiateCharactersAndIDs() {
 		GameObject characterTMP;
 
-		characterTMP = Instantiate(defaultPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+		characterTMP = Instantiate(defaultPrefab, new Vector3(2, 0.4f, -2), Quaternion.identity);
 		characterTMP.GetComponent<CharacterAttributes>().setID(0);
 		characterTMP.GetComponent<CharacterAttributes>().setMessage("default");
 		currentCharacters.Add(characterTMP);
 
-		characterTMP = Instantiate(defaultPrefab, new Vector3(0, 0, 6), Quaternion.identity);
+		characterTMP = Instantiate(defaultPrefab, new Vector3(0, 0.4f, 6), Quaternion.identity);
 		characterTMP.GetComponent<CharacterAttributes>().setID(1);
 		characterTMP.GetComponent<CharacterAttributes>().setMessage("default");
 		currentCharacters.Add(characterTMP);
 
-		characterTMP = Instantiate(defaultPrefab, new Vector3(6, 0, 6), Quaternion.identity);
+		characterTMP = Instantiate(defaultPrefab, new Vector3(5.4f, 0.4f, 1.3f), Quaternion.identity);
 		characterTMP.GetComponent<CharacterAttributes>().setID(2);
 		characterTMP.GetComponent<CharacterAttributes>().setMessage("default");
 		currentCharacters.Add(characterTMP);
