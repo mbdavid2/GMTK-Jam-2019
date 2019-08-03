@@ -1,27 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour {
 
     private float movementSpeed;
     private bool collided;
     public Rigidbody playerRb;
+    public Text textInteract;
 
 	void Start () {
         movementSpeed = 5f;
         collided = false;
+        textInteract.text = "";
 	}
 
-    void OnCollisionEnter(Collision coll) {
+    void OnCollisionStay(Collision coll) {
         playerRb.velocity = Vector3.zero;
+        if (coll.gameObject.tag.Equals("Character")) {
+            print(coll.gameObject.GetComponent<CharacterAttributes>().isCharacterKiller());
+            //GetComponent<SenseBehaviour>().isCharacterKiller()
+            textInteract.text = "Press F to accuse";
+            if(Input.GetKey(KeyCode.F)) {
+                print("dsadas");
+                if (coll.gameObject.GetComponent<CharacterAttributes>().isCharacterKiller()) {
+			        SceneManager.LoadScene("Main");
+                }
+                else {
+                    SceneManager.LoadScene("GameOver");
+                }
+            }
+        }
 	}
 
-     void OnCollisionExit(Collision coll) {
+    void OnCollisionExit(Collision coll) {
 		collided = false;
+        textInteract.text = "";
 	}
 
     void Update () {
+        movement();
+
+
+	}
+
+    private void movement() {
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
 
@@ -42,5 +67,5 @@ public class PlayerMovement : MonoBehaviour {
         if (collided) {
             transform.Translate(movementSpeed*Input.GetAxis("Horizontal")*Time.deltaTime/100, 0f, movementSpeed*Input.GetAxis("Vertical")*Time.deltaTime/100);
         }*/
-	}
+    }
 }

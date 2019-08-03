@@ -17,8 +17,7 @@ public class CharacterController : MonoBehaviour {
 	}
 	
 	void instantiateLevel() {
-		instantiateCharactersAndIDs();
-		missatgesHardcoded();
+	
 	}
 
 	void Update () {
