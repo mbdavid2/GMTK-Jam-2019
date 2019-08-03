@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterAttributes : MonoBehaviour {
 
@@ -10,6 +11,7 @@ public class CharacterAttributes : MonoBehaviour {
     public bool isKiller;
     public GameObject objectMessage;
     public GameObject canvas;
+    public Text messageTextCanvas;
     public GameObject playerInteraction;
     public GameObject nearSpace;
 
@@ -31,7 +33,8 @@ public class CharacterAttributes : MonoBehaviour {
         this.message = message;
         objectMessage = this.gameObject.transform.GetChild(0).gameObject;
         canvas = this.gameObject.transform.GetChild(4).gameObject;
-        objectMessage.GetComponent<TextMesh>().text = message;
+        //objectMessage.GetComponent<TextMesh>().text = message;
+        messageTextCanvas.text = message;
         messagePointAtCamera();
     }
 
@@ -40,8 +43,9 @@ public class CharacterAttributes : MonoBehaviour {
         //objectMessage.transform.localScale = new Vector3(-objectMessage.transform.localScale.x*1.1f, objectMessage.transform.localScale.y, objectMessage.transform.localScale.z);
         //objectMessage.transform.Rotate(objectMessage.transform.rotation.x, objectMessage.transform.rotation.y + 180f, objectMessage.transform.rotation.z, Space.Self);
 
-        objectMessage.transform.LookAt(objectMessage.transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
-        canvas.transform.LookAt(canvas.transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
+        //objectMessage.transform.LookAt(objectMessage.transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
+        //canvas.transform.LookAt(canvas.transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
+        canvas.transform.LookAt(Camera.main.transform);
     }
 
     public void setIsKiller() {

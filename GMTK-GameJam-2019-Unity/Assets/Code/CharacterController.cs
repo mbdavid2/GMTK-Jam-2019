@@ -13,7 +13,7 @@ public class CharacterController : MonoBehaviour {
 		currentCharacters = new List<GameObject>();
 		maxNumCharacters = 3;
 
-		instantiateLevel();
+		//instantiateLevel();
 	}
 	
 	void instantiateLevel() {
