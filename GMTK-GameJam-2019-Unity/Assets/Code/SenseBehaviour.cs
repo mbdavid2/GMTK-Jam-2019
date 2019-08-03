@@ -26,17 +26,17 @@ public class SenseBehaviour : MonoBehaviour {
             case Sense.Sight:
                 hearingBackground1.Pause();
                 hearingBackground2.Pause();
-                GameObject.Find("Floor").GetComponent<MeshRenderer>().enabled = true;
+                GameObject.Find("Plane").GetComponent<MeshRenderer>().enabled = true;
                 break;
             case Sense.Hearing:
                 hearingBackground1.UnPause();
                 hearingBackground2.UnPause();
-                GameObject.Find("Floor").GetComponent<MeshRenderer>().enabled = false;
+                GameObject.Find("Plane").GetComponent<MeshRenderer>().enabled = false;
                 break;
             case Sense.Touch:
                 hearingBackground1.Pause();
                 hearingBackground2.Pause();
-                GameObject.Find("Floor").GetComponent<MeshRenderer>().enabled = false;
+                GameObject.Find("Plane").GetComponent<MeshRenderer>().enabled = false;
                 break;
             default:
                 Debug.Log("wrong currentSense value");
