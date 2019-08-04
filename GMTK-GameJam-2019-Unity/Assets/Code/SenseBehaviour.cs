@@ -29,11 +29,11 @@ public class SenseBehaviour : MonoBehaviour {
     }
 
     void updateEnvironmentSense() {
+        if (null != anim) {
+            anim.Play("AnimBlink", 0, 0.095f);
+        }
         switch(currentSense) {
             case Sense.Sight:
-                if (null != anim) {
-                
-                }
                 hearingBackground1.Pause();
                 hearingBackground2.Pause();
                 foreach (Transform c in level_elem) {
@@ -122,11 +122,7 @@ public class SenseBehaviour : MonoBehaviour {
         return currentCooldown;
     }
 
-    void Update () {
-        if(Input.GetKey(KeyCode.Q)) {
-			anim.Play("AnimBlink", 0, 0);
-		}
-            
+    void Update () {            
         if (currentCooldown - Time.deltaTime > 0) {
             currentCooldown -= Time.deltaTime;
         }
