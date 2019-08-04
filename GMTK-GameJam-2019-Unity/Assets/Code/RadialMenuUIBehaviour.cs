@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RadialMenuUIBehaviour : MonoBehaviour {
 
@@ -57,7 +58,11 @@ public class RadialMenuUIBehaviour : MonoBehaviour {
         else {
             cooldownText.text = cooldown.ToString("N2");
             clock.SetActive(false);
-        } 
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     void updateSelColor() {
