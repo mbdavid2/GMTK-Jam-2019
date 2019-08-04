@@ -30,7 +30,7 @@ public class SenseBehaviour : MonoBehaviour {
 
     void updateEnvironmentSense() {
         if (null != anim) {
-            anim.Play("AnimBlink", 0, 0.095f);
+            anim.Play("AnimBlink", 0, 0.11f);
         }
         switch(currentSense) {
             case Sense.Sight:
