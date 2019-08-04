@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44426456, g: 0.4937154, b: 0.5730914, a: 1}
+  m_IndirectSpecularColor: {r: 0.44426444, g: 0.4937151, b: 0.5730905, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -733,7 +733,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.10000086}
+  m_AnchoredPosition: {x: 0, y: 8}
   m_SizeDelta: {x: 135, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &433070058
@@ -770,7 +770,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "\n\nDavid Moreno & Josep Ciurana\n\n\n\n\n\nBrett Gregory\r for Radial
     Menu Framework\n\nThomas Canale for Noir\r\n\nBanco de Im\xE1genes y Sonidos for
-    audio clips\n\npngimg.com for png images\n\n...\n\n...\n\n...\n\n...\n\n...\n\n...\n\n...\n\n\n"
+    audio clips\n\npngimg.com for png images\n\nXamin Software for Low Poly Survival
+    Kit\n\nDavid Stenfors for Low Poly Forest Pack\n\nAndrey Graphics for Low Poly
+    Pack"
 --- !u!222 &433070059
 CanvasRenderer:
   m_ObjectHideFlags: 0
