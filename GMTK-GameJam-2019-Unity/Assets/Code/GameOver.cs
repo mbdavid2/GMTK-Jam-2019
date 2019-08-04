@@ -11,6 +11,7 @@ public class GameOver : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Menu.pause = false;
         if (Menu.gameover) {
             nextLevelButton.gameObject.SetActive(false);
             text.text = "You lose, better luck next time.";

@@ -54,7 +54,10 @@ public class PlayerMovement : MonoBehaviour {
 
     void Update () {
         movement();
-
+        if(Input.GetKey(KeyCode.Escape)) {
+            Menu.pause = true;
+			SceneManager.LoadScene("Menu");
+		}
 
 	}
 
