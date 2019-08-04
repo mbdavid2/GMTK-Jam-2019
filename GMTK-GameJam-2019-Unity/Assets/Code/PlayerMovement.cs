@@ -26,7 +26,6 @@ public class PlayerMovement : MonoBehaviour {
                 textInteract.text = "Press F to punch\nPress G to greet";
                 if(Input.GetKey(KeyCode.F)) {
                     if (coll.gameObject.GetComponent<CharacterAttributes>().isCharacterKiller()) {
-                        print("dsadasdas");
                         Menu.gameover = false;
                         SceneManager.LoadScene("GameOver");
                     }
