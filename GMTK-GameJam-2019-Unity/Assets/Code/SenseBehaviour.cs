@@ -14,7 +14,10 @@ public class SenseBehaviour : MonoBehaviour {
 
     Transform[] level_elem, actors_elems;
 
+    private Animator anim;
+
     void Start () {
+        anim = GameObject.Find("Animation").GetComponent<Animator>();
         hearingBackground1 = GameObject.Find("Audio Background 1").GetComponent<AudioSource>();
         hearingBackground2 = GameObject.Find("Audio Background 2").GetComponent<AudioSource>();
         hearingBackground1.Play();
@@ -28,6 +31,9 @@ public class SenseBehaviour : MonoBehaviour {
     void updateEnvironmentSense() {
         switch(currentSense) {
             case Sense.Sight:
+                if (null != anim) {
+                
+                }
                 hearingBackground1.Pause();
                 hearingBackground2.Pause();
                 foreach (Transform c in level_elem) {
@@ -117,6 +123,10 @@ public class SenseBehaviour : MonoBehaviour {
     }
 
     void Update () {
+        if(Input.GetKey(KeyCode.Q)) {
+			anim.Play("AnimBlink", 0, 0);
+		}
+            
         if (currentCooldown - Time.deltaTime > 0) {
             currentCooldown -= Time.deltaTime;
         }
