@@ -1434,6 +1434,7 @@ MonoBehaviour:
   messageTextCanvas: {fileID: 199553203}
   playerInteraction: {fileID: 0}
   nearSpace: {fileID: 0}
+  silentUntilGreet: 0
 --- !u!65 &235702168
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2894,6 +2895,7 @@ MonoBehaviour:
   messageTextCanvas: {fileID: 0}
   playerInteraction: {fileID: 0}
   nearSpace: {fileID: 0}
+  silentUntilGreet: 0
 --- !u!65 &590000399
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3115,6 +3117,7 @@ MonoBehaviour:
   messageTextCanvas: {fileID: 0}
   playerInteraction: {fileID: 0}
   nearSpace: {fileID: 0}
+  silentUntilGreet: 0
 --- !u!65 &623922641
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4000,6 +4003,7 @@ MonoBehaviour:
   messageTextCanvas: {fileID: 1306072782}
   playerInteraction: {fileID: 0}
   nearSpace: {fileID: 0}
+  silentUntilGreet: 0
 --- !u!65 &830709556
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4751,6 +4755,7 @@ MonoBehaviour:
   messageTextCanvas: {fileID: 0}
   playerInteraction: {fileID: 0}
   nearSpace: {fileID: 0}
+  silentUntilGreet: 0
 --- !u!65 &988581088
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6095,6 +6100,7 @@ MonoBehaviour:
   messageTextCanvas: {fileID: 204414772}
   playerInteraction: {fileID: 0}
   nearSpace: {fileID: 0}
+  silentUntilGreet: 0
 --- !u!65 &1202292134
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6431,7 +6437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1261707910
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7347,6 +7353,7 @@ MonoBehaviour:
   messageTextCanvas: {fileID: 642132824}
   playerInteraction: {fileID: 0}
   nearSpace: {fileID: 0}
+  silentUntilGreet: 0
 --- !u!65 &1371499675
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7657,6 +7664,7 @@ MonoBehaviour:
   messageTextCanvas: {fileID: 1186259300}
   playerInteraction: {fileID: 0}
   nearSpace: {fileID: 0}
+  silentUntilGreet: 1
 --- !u!65 &1409124519
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9083,6 +9091,7 @@ MonoBehaviour:
   messageTextCanvas: {fileID: 583110559}
   playerInteraction: {fileID: 0}
   nearSpace: {fileID: 0}
+  silentUntilGreet: 0
 --- !u!65 &1665843298
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9852,6 +9861,7 @@ MonoBehaviour:
   messageTextCanvas: {fileID: 669503148}
   playerInteraction: {fileID: 0}
   nearSpace: {fileID: 0}
+  silentUntilGreet: 1
 --- !u!65 &1906934637
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9982,6 +9992,7 @@ MonoBehaviour:
   messageTextCanvas: {fileID: 0}
   playerInteraction: {fileID: 0}
   nearSpace: {fileID: 0}
+  silentUntilGreet: 0
 --- !u!65 &1914831007
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class CharacterAttributes : MonoBehaviour {
     public Text messageTextCanvas;
     public GameObject playerInteraction;
     public GameObject nearSpace;
+    public bool silentUntilGreet;
 
 	void Start () {
         
@@ -54,6 +55,14 @@ public class CharacterAttributes : MonoBehaviour {
 	
     public bool isCharacterKiller() {
         return isKiller;
+    }
+
+    public bool isSilentUntilGreet() {
+        return silentUntilGreet;
+    }
+
+    public void setSilentNoMore() {
+        silentUntilGreet = false;
     }
 	
 }

@@ -36,8 +36,8 @@ public class PlayerMovement : MonoBehaviour {
                     if (coll.gameObject.GetComponent<CharacterAttributes>().isCharacterKiller()) {
                         SceneManager.LoadScene("GameOver");
                     }
-                    else {
-                        print("Show message");
+                    else if (coll.gameObject.GetComponent<CharacterAttributes>().isSilentUntilGreet()) {
+                        coll.gameObject.GetComponent<CharacterAttributes>().setSilentNoMore();
                     }
                 }
             }
