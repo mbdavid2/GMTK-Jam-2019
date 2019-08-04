@@ -8,8 +8,11 @@ public class Menu : MonoBehaviour {
 
 	[SerializeField] Button playButton, creditsButton, exitButton, backButton;
     [SerializeField] GameObject title1, title2, copy1, copy2;
-	
-	void Start () {
+
+    public static bool gameover;
+    public static int currentLevel;
+
+    void Start () {
 		playButton.onClick.AddListener(loadGame);
         creditsButton.onClick.AddListener(showCredits);
 		exitButton.onClick.AddListener(exitGame);
@@ -24,7 +27,9 @@ public class Menu : MonoBehaviour {
 	}
 
 	void loadGame() {
-		SceneManager.LoadScene("Main");
+        gameover = false;
+        currentLevel = 1;
+		SceneManager.LoadScene(currentLevel);
 	}
 
 	void exitGame() {
