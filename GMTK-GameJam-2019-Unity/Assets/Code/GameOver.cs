@@ -26,7 +26,7 @@ public class GameOver : MonoBehaviour {
         if (Menu.gameover) {
             lose.Play();
             nextLevelButton.gameObject.SetActive(false);
-            text.text = "You lose, better luck next time.\n\n" + quotes[Random.Range(0,10)];
+            text.text = "You've lost, better luck next time!\n\n" + quotes[Random.Range(0,10)];
         }
         else {
             win.Play();
@@ -39,7 +39,7 @@ public class GameOver : MonoBehaviour {
             }
             else {
                 title.text = "Level Cleared";
-                text.text = "You found the culprit, nice.\n\n" + quotes[Random.Range(0, 10)];
+                text.text = "You've found the culprit, good!\n\n" + quotes[Random.Range(0, 10)];
             }
             nextLevelButton.onClick.AddListener(() => SceneManager.LoadScene(Menu.currentLevel));
         }

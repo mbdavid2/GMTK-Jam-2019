@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour {
         playerRb.velocity = Vector3.zero;
         if (coll.gameObject.tag.Equals("Character")) {
             if (GetComponent<SenseBehaviour>().getCurrentSense() == SenseBehaviour.Sense.Touch) {
-                print(coll.gameObject.GetComponent<CharacterAttributes>().isCharacterKiller());
+                //print(coll.gameObject.GetComponent<CharacterAttributes>().isCharacterKiller());
                 //GetComponent<SenseBehaviour>().isCharacterKiller()
                 textInteract.text = "Press F to punch\nPress G to greet";
                 if(Input.GetKey(KeyCode.F)) {

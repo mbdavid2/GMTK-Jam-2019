@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44426444, g: 0.4937151, b: 0.5730905, a: 1}
+  m_IndirectSpecularColor: {r: 0.44426456, g: 0.4937154, b: 0.5730914, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -563,10 +563,10 @@ MonoBehaviour:
   m_Text: "One killer\r...\nOnly one sense to catch him\r...\nOnly one try\r...\n\r\nBe
     careful not to accuse an innocent villager! You only have one try. Some villagers
     won't provide information unless you greet them, but be careful, if you greet
-    the killer, you will loose.\n\nPut yourself in the boots of a fallen police officer
+    the killer, you will lose.\n\nPut yourself in the boots of a fallen police officer
     now known as Detective 1sense, with only one sense active at any time because
-    of [REDACTED].\n\nUse [W, A, S, D] to move and [SPACE] to select your current
-    sense. Good luck!"
+    of [REDACTED].\n\nUse [W, A, S, D] to move, [SPACE] to select your current sense
+    and [ESC] to exit a level.\n\nGood luck!"
 --- !u!222 &282369621
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -733,8 +733,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 8}
-  m_SizeDelta: {x: 135, y: 60}
+  m_AnchoredPosition: {x: 0, y: 5.4000006}
+  m_SizeDelta: {x: 135, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &433070058
 MonoBehaviour:
@@ -768,11 +768,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\n\nDavid Moreno & Josep Ciurana\n\n\n\n\n\nBrett Gregory\r for Radial
-    Menu Framework\n\nThomas Canale for Noir\r\n\nBanco de Im\xE1genes y Sonidos for
-    audio clips\n\npngimg.com for png images\n\nXamin Software for Low Poly Survival
-    Kit\n\nDavid Stenfors for Low Poly Forest Pack\n\nAndrey Graphics for Low Poly
-    Pack"
+  m_Text: "\n\n\n\n\nDavid Moreno Borras\n\nJosep Ciurana Herrera\n\n\n\n\n\n\nBrett
+    Gregory\r for Radial Menu Framework\n\nThomas Canale for Noir\r\n\nBanco de Im\xE1genes
+    y Sonidos for audio clips\n\npngimg.com for png images\n\nXamin Software for Low
+    Poly Survival Kit\n\nDavid Stenfors for Low Poly Forest Pack\n\nAndrey Graphics
+    for Low Poly Pack\n\nitch.io\n\nMark Brown"
 --- !u!222 &433070059
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3040,8 +3040,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.1}
-  m_SizeDelta: {x: 135, y: 60}
+  m_AnchoredPosition: {x: 0, y: -2.5}
+  m_SizeDelta: {x: 135, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1471963666
 MonoBehaviour:
@@ -3076,6 +3076,9 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'A Game By
+
+
+
 
 
 

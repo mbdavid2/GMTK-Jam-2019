@@ -29,7 +29,7 @@ public class RadialMenuUIBehaviour : MonoBehaviour {
         sightButton.onClick.AddListener(() => onClickButton(SenseBehaviour.Sense.Sight));
         hearingButton.onClick.AddListener(() => onClickButton(SenseBehaviour.Sense.Hearing));
         touchButton.onClick.AddListener(() => onClickButton(SenseBehaviour.Sense.Touch));
-        Debug.Log(currentSense);
+        //Debug.Log(currentSense);
         radialMenuUI.SetActive(false);
     }
 
@@ -42,7 +42,7 @@ public class RadialMenuUIBehaviour : MonoBehaviour {
             cooldown = senseBeh.getCurrentCooldown();
             clock.SetActive(true);
             updateSelColor();
-            Debug.Log(currentSense);
+            //Debug.Log(currentSense);
         }
         radialMenuUI.SetActive(false);
     }
@@ -59,10 +59,10 @@ public class RadialMenuUIBehaviour : MonoBehaviour {
             cooldownText.text = cooldown.ToString("N2");
             clock.SetActive(false);
         }
-        if (Input.GetKeyDown(KeyCode.P))
+        /*if (Input.GetKeyDown(KeyCode.P))
         {
             SceneManager.LoadScene("GameOver");
-        }
+        }*/
     }
 
     void updateSelColor() {
@@ -83,7 +83,7 @@ public class RadialMenuUIBehaviour : MonoBehaviour {
                 hearingButton.colors = refColor;
                 break;
             default:
-                Debug.Log("wrong currentSense value");
+                //Debug.Log("wrong currentSense value");
                 break;
         }
     } 

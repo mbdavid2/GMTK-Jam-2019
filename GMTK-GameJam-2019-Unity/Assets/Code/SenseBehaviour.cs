@@ -69,7 +69,7 @@ public class SenseBehaviour : MonoBehaviour {
 
                             // Distance to player
                             float distance = Vector3.Distance(c.gameObject.GetComponent<Canvas>().GetComponent<RectTransform>().transform.position, GameObject.Find("Player").transform.position);
-                            print(distance*distance*distance);
+                            //print(distance*distance*distance);
                             distance = distance*distance;
                             float factor = 3/distance;
                             if (factor > 0.15f) factor = 0.15f;
@@ -99,7 +99,7 @@ public class SenseBehaviour : MonoBehaviour {
                 }
                 break;
             default:
-                Debug.Log("wrong currentSense value");
+                //Debug.Log("wrong currentSense value");
                 break;
         }
     }
