@@ -23,14 +23,21 @@ public class PlayerMovement : MonoBehaviour {
             if (GetComponent<SenseBehaviour>().getCurrentSense() == SenseBehaviour.Sense.Touch) {
                 print(coll.gameObject.GetComponent<CharacterAttributes>().isCharacterKiller());
                 //GetComponent<SenseBehaviour>().isCharacterKiller()
-                textInteract.text = "Press F to accuse";
+                textInteract.text = "Press F to punch\nPress G to greet";
                 if(Input.GetKey(KeyCode.F)) {
-                    print("dsadas");
                     if (coll.gameObject.GetComponent<CharacterAttributes>().isCharacterKiller()) {
-                        SceneManager.LoadScene("Main");
+                        SceneManager.LoadScene("Menu");
                     }
                     else {
                         SceneManager.LoadScene("GameOver");
+                    }
+                }
+                if(Input.GetKey(KeyCode.G)) {
+                    if (coll.gameObject.GetComponent<CharacterAttributes>().isCharacterKiller()) {
+                        SceneManager.LoadScene("GameOver");
+                    }
+                    else {
+                        print("Show message");
                     }
                 }
             }

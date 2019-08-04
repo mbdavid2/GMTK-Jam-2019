@@ -61,9 +61,12 @@ public class SenseBehaviour : MonoBehaviour {
                         //print(c.gameObject.GetComponent<Canvas>().GetComponent<RectTransform>().transform.localScale);
 
                         // Distance to player
-                        float distance = 6f*Vector3.Distance(c.gameObject.GetComponent<Canvas>().GetComponent<RectTransform>().transform.position, GameObject.Find("Player").transform.position);
-                        print(distance);
-                        c.gameObject.GetComponent<Canvas>().GetComponent<RectTransform>().transform.localScale -= new Vector3(-1/distance, -1/distance, 0f);
+                        float distance = Vector3.Distance(c.gameObject.GetComponent<Canvas>().GetComponent<RectTransform>().transform.position, GameObject.Find("Player").transform.position);
+                        print(distance*distance*distance);
+                        distance = distance*distance;
+                        float factor = 3/distance;
+                        if (factor > 0.15f) factor = 0.15f;
+                        c.gameObject.GetComponent<Canvas>().GetComponent<RectTransform>().transform.localScale = new Vector3(factor, factor, 0f);
                         c.gameObject.GetComponent<Canvas>().referencePixelsPerUnit = 21f;
                         /*UnityEngine.UI.CanvasScaler can = c.gameObject.GetComponent<Canvas>().CanvasScaler;
                         can.dynamicPixelsPerUnit = 20f;*/
