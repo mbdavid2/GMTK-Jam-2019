@@ -11,16 +11,20 @@ public class RadialMenuUIBehaviour : MonoBehaviour {
     [SerializeField] Button sightButton, hearingButton, touchButton;
     [SerializeField] GameObject radialMenuUI;
     [SerializeField] Text cooldownText;
-    [SerializeField] GameObject player;
+    [SerializeField] GameObject player, clock;
 
     SenseBehaviour senseBeh;
 
+    ColorBlock refColor, selColor;
+
     void Start () {
+        refColor = selColor = sightButton.colors;
+        selColor = hearingButton.colors;
         senseBeh = player.GetComponent<SenseBehaviour>();
         currentSense = senseBeh.getCurrentSense();
+        updateSelColor();
         //Change UI sprite button?
         cooldown = senseBeh.getCurrentCooldown();
-        // cooldown = sense.GetComponent<SenseBehaviour>.getCooldown();
         sightButton.onClick.AddListener(() => onClickButton(SenseBehaviour.Sense.Sight));
         hearingButton.onClick.AddListener(() => onClickButton(SenseBehaviour.Sense.Hearing));
         touchButton.onClick.AddListener(() => onClickButton(SenseBehaviour.Sense.Touch));
@@ -35,6 +39,8 @@ public class RadialMenuUIBehaviour : MonoBehaviour {
             senseBeh.setCurrentSense(currentSense);
             //reiniciar cooldown a sense + fer transicio del sentit antic al nou
             cooldown = senseBeh.getCurrentCooldown();
+            clock.SetActive(true);
+            updateSelColor();
             Debug.Log(currentSense);
         }
         radialMenuUI.SetActive(false);
@@ -50,7 +56,30 @@ public class RadialMenuUIBehaviour : MonoBehaviour {
         }
         else {
             cooldownText.text = cooldown.ToString("N2");
-            //Mostrar logo disponible
+            clock.SetActive(false);
         } 
     }
+
+    void updateSelColor() {
+        switch (currentSense) {
+            case SenseBehaviour.Sense.Sight:
+                sightButton.colors = selColor;
+                hearingButton.colors = refColor;
+                touchButton.colors = refColor;
+                break;
+            case SenseBehaviour.Sense.Hearing:
+                hearingButton.colors = selColor;
+                sightButton.colors = refColor;
+                touchButton.colors = refColor;
+                break;
+            case SenseBehaviour.Sense.Touch:
+                touchButton.colors = selColor;
+                sightButton.colors = refColor;
+                hearingButton.colors = refColor;
+                break;
+            default:
+                Debug.Log("wrong currentSense value");
+                break;
+        }
+    } 
 }

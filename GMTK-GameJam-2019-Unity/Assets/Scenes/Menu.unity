@@ -689,7 +689,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "\n\nDavid Moreno & Josep Ciurana\n\n\n\n\n\nBrett Gregory\r for Radial
     Menu Framework\n\nThomas Canale for Noir\r\n\nBanco de Im\xE1genes y Sonidos for
-    audio clips\n\n...\n\n...\n\n...\n\n...\n\n...\n\n...\n\n...\n\n...\n\n\n"
+    audio clips\n\npngimg.com for png images\n\n...\n\n...\n\n...\n\n...\n\n...\n\n...\n\n...\n\n\n"
 --- !u!222 &433070059
 CanvasRenderer:
   m_ObjectHideFlags: 0
