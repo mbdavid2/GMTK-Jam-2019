@@ -20,6 +20,9 @@ public class GameOver : MonoBehaviour {
             //if currentLvl == maxLvl finestra fi
             title.text = "Level Clear";
             text.text = "You found the culprit, nice.";
+            Menu.currentLevel++;
+            if (Menu.currentLevel >= 5) Menu.currentLevel = 0;
+            print(Menu.currentLevel);
             nextLevelButton.onClick.AddListener(() => SceneManager.LoadScene(Menu.currentLevel));
         }
         menuButton.onClick.AddListener(() => SceneManager.LoadScene("Menu"));

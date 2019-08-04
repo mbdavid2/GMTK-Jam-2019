@@ -26,14 +26,18 @@ public class PlayerMovement : MonoBehaviour {
                 textInteract.text = "Press F to punch\nPress G to greet";
                 if(Input.GetKey(KeyCode.F)) {
                     if (coll.gameObject.GetComponent<CharacterAttributes>().isCharacterKiller()) {
-                        SceneManager.LoadScene("Menu");
+                        print("dsadasdas");
+                        Menu.gameover = false;
+                        SceneManager.LoadScene("GameOver");
                     }
                     else {
+                        Menu.gameover = true;
                         SceneManager.LoadScene("GameOver");
                     }
                 }
                 if(Input.GetKey(KeyCode.G)) {
                     if (coll.gameObject.GetComponent<CharacterAttributes>().isCharacterKiller()) {
+                        Menu.gameover = true;
                         SceneManager.LoadScene("GameOver");
                     }
                     else if (coll.gameObject.GetComponent<CharacterAttributes>().isSilentUntilGreet()) {
