@@ -22,6 +22,7 @@ public class GameOver : MonoBehaviour {
         quotes[7] = "\"The criminal is the creative artist; the detective only the critic.\"\n-Gilbert K. Chesterton";
         quotes[8] = "\"The detective story is the normal recreation of noble minds.\"\n-Philip Guedalla";
         quotes[9] = "\"It is ridiculous to set a detective story in New York City. New York City is itself a detective story.\"\n-Agatha Christie";
+        Menu.pause = false;
         if (Menu.gameover) {
             lose.Play();
             nextLevelButton.gameObject.SetActive(false);

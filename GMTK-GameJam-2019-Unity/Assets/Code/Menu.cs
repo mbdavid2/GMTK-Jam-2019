@@ -11,6 +11,7 @@ public class Menu : MonoBehaviour {
 
     public static bool gameover;
     public static int currentLevel;
+	public static bool pause = false;
 
     void Start () {
 		playButton.onClick.AddListener(loadGame);
@@ -29,7 +30,7 @@ public class Menu : MonoBehaviour {
 
 	void loadGame() {
         gameover = false;
-        currentLevel = 1;
+        if (!pause) currentLevel = 1;
 		SceneManager.LoadScene(currentLevel);
 	}
 
